@@ -1,4 +1,17 @@
+import pandas as pd
 import csv
+
+
+dataframe = pd.read_csv('al_results_2020.csv', index_col='index', low_memory=False) #Using pandas to read .csv
+
+# remove columns: Zscore, gender, syllabus
+dataframe = dataframe.drop(columns=['Zscore', 'gender', 'syllabus']) # multiple columns dropped
+
+dataframe = dataframe.dropna() # drops missing values
+
+dataframe = dataframe.to_csv('new_data_file.csv') #transfer the semi-transformed data to a new file  # ,encoding='utf-8'
+
+
 
 
 def transform_file(old_file):
