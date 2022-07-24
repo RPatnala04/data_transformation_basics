@@ -8,7 +8,7 @@ dataframe = pd.read_csv('al_results_2020.csv', index_col='index', low_memory=Fal
 
 dataframe = dataframe.drop(columns=['Zscore', 'gender', 'syllabus']) # multiple columns dropped (remove columns: Zscore, gender, syllabus)
 
-#dataframe = dataframe.dropna('-') # drops missing values
+dataframe = dataframe.dropna() # drops missing values
 
 dataframe = dataframe.to_csv('new_data_file.csv') #transfer the semi-transformed data to a new file  # ,encoding='utf-8'
 
